@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",               // or ES6, depending on your environment
+    "module": "ESNext",             // Use 'ESNext' for ESM, or 'commonjs' for CJS
+    "moduleResolution": "node",
+    "outDir": "./dist",               // Where to put compiled JS files if you're building
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
