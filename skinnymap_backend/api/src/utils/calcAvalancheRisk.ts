@@ -17,8 +17,16 @@ export default async function calcAvalancheRisk(
   // Calculate slope and aspect
   const { slopeAngle, aspectDirection } = calculateSlopeAndAspect(elevations);
 
-  // Get dummy weather data
-  const { snowfall, windSpeed } = getWeatherData();
+  const WEATHER_LAT = inputPoints.center[0];
+  const WEATHER_LON = inputPoints.center[1];
+
+  // Get weather data (awaited)
+  const { snowfall, windSpeed } = await getWeatherData(
+    WEATHER_LAT,
+    WEATHER_LON
+  );
+
+  console.log(snowfall, windSpeed);
 
   // Calculate avalanche risk
   const groupSize = 4; // Example: assume group size of 4
